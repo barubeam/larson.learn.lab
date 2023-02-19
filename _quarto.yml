@@ -1,0 +1,20 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Larson's Learning Lab"
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/
+      - icon: linkedin
+        href: https://www.linkedin.com/in/amy-larson-gis/
+format:
+  html:
+    theme: lumen
+    css: styles.css
+
+
+

@@ -1,0 +1,18 @@
+---
+title: "About"
+image: Amy.jpg
+about:
+  template: jolla
+  links: 
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/amy-larson-gis/
+    - icon: github
+      text: Github
+      href: https://github.com
+
+---
+
+Amy Larson is a geospatial science and data professional with over eight years of industry specific experience, whose work is focused on digital product design and delivery; data analysis, collection, and management; and process automation.
+
+When not on the clock, you will find her tinkering with some low-code/no-code tech to automate mundane tasks and routines like family calendars, secret Santa name generators, and the like. Or, roaming the river valleys of SE MN with her family and our two cattle dogs.
