@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Amy Larson">
+<meta name="dcterms.date" content="2023-02-13">
+
+<title>Larson’s Learning Lab - ArcGIS API for Python</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Larson’s Learning Lab</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/amy-larson-gis/"><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">ArcGIS API for Python</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">news</div>
+                <div class="quarto-category">code</div>
+                <div class="quarto-category">analysis</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Amy Larson </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 13, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="whats-the-fuss" class="level1">
+<h1>What’s the fuss?</h1>
+<p>If you’re like me and frequently use Python to automate GIS and data analysis workflows, then you are likely aware of Esri’s newest development API–ArcGIS API for Python. The API is a Pythonic based library that allows users the ability to map, manage, analyze, and visualize their geospatial data directly from their AGOL or Enterprise environments. What makes this API so exciting and powerful is that it can be easily integrated with third party applications, such as Power BI, to extend web-based geospatial analysis and content into data analysis and business analysis workflows outside of the Esri platform.</p>
+<p>Like Esri’s other Pythonic based library, Arcpy, ArcGIS API for Python is easy to use and is packaged with each ArcGIS Pro istallation–which makes it an accessible option for integration into your existing data anlysis pipelines and tools.</p>
+</section>
+<section id="use-case" class="level1">
+<h1>Use Case</h1>
+<p>This tutorial will walk you through implementation of ArcGIS API for Python within the Power BI environment to consume ArcGIS Hosted Feature Layers as Python data sources, that then can be used in Power BI reports and dashboards. All you will need for this workflow is to be signed-in to your ArcGIS account in ArcGIS Pro and have access to a Power BI Pro license or greater.</p>
+<p>It is assumed that you have a basic understanding of Python syntax and some familiairty with the ArcGIS API for Python. If you need resources on either, check out <a href="https://realpython.com/tutorials/basics/">Real Python</a> for Python basics and Esri’s <a href="https://developers.arcgis.com/python/">developers documentation</a> for an overview on the API.</p>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
+<p>The first step in this implementation is to set the Python environment in Power BI to the arcgispro-py3 package available within your ArcGIS Pro installation. Please note, this workflow will only work within environments where ArcGIS Pro and Power BI Desktop are available on the same machine, and you must be signed-in to an active AGOL or Portal in ArcGIS Pro before proceeding with the following steps.</p>
+<p>Step 1. Open Power BI desktop and navigate to File&gt;Options and settings&gt;Options&gt;Python scripting. The options window will appear, you will then select “Browse” under “Python scripting options.</p>
+<p>Step 2: Select “Browse” and navigate to the location of the acrgispro-py3 package. For most users, this will be located in C:&gt;Program Files&gt;ArcGIS&gt;Pro&gt;bin&gt;Python&gt;envs. Select the folder named “arcgispro-py3” and click “OK”. Leave all other settings the same and click “OK” to accept these changes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/options.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="get-data" class="level2">
+<h2 class="anchored" data-anchor-id="get-data">Get Data</h2>
+<p>The following steps will show you how to call the arcgis module within the arcgispro-py3 package installed with ArcGIS Pro. This module will allow you to query available services from your AGOL or Enterprise accounts, that you can then analyze and visualize in Power BI desktop.</p>
+<p>Step 1. Click on “Get data” <img src="./images/Get Data Icon.png" class="img-fluid"> in the Data toolbar on the Home ribbon in Power BI desktop, and select “More” in the options drop down. The Get Data window will appear with All sources as the default option. Here you can either scroll to find “Python script” or click “Other”.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/get_data_options.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Step 2. Select “Python script” as your data source. The Python script window will appear and this is where you will add your Python code. The installation settings at the bottom of the window should list “arcgispro-py3” as the active python environment. If this is not the case, complete the steps laid out under “Getting Started”.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/script_window.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Step3. Enter the following code into the code block under “Script” and click “OK”. The Navigator window will appear and the Hosted Feature Layer will appear as a new table named “sdf”.</p>
+<p>Note: The string of characters in the .get() function is the Item ID of the Hosted Feature Layer you will use for this exercise. Optionally, you can use the Item ID of content from your own organization if you would like. If you would like to learn more about Item IDs and where to find this information in AGOL or Portal, you can read about it <a href="https://developers.arcgis.com/documentation/glossary/item-id/#:~:text=An%20item%20ID%20is%20a,in%20the%20item%20page's%20URL">here</a>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> arcgis.gis <span class="im">import</span> GIS</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>gis <span class="op">=</span> GIS(<span class="st">"pro"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>service <span class="op">=</span> gis.content.get(<span class="st">"85d0ca4ea1ca4b9abf0c51b9bd34de2e"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>fs <span class="op">=</span> service.layers[<span class="dv">0</span>]</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>sdf <span class="op">=</span> fs.query().sdf</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Step 4. Select the checkbox next to “sdf” in the Navigator window to view the underlying data in the preview pane. Here you can either load the data as is into the visualization canvas in Power BI desktop, or you can transform the data using Power Query. For this exercise, you simply need to load the data into the visualization canvas. Click “Load”.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/sdf.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="publish" class="level2">
+<h2 class="anchored" data-anchor-id="publish">Publish</h2>
+<p>For this exercise you will skip any visualization of the Hosted Feature Layer data you have imported into Power BI desktop. The next step in this implementation will be to publish this report and dataset to your Power BI Service environment.</p>
+<p>Step 1. Save the Power BI report as is.</p>
+<p>Step 2. Click on “Publish” in the Share toolbar of the Home ribbon. <img src="./images/Publish_Icon.png" class="img-fluid"> The Publish to Power BI window will appear.</p>
+<p>Step 3. Select “My workspace” under Select a destination and click “Select”. Optionally, you could select any available workspaces you wish to publish to. For this exercise, we will select the default workspace (“My workspace”).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/workspace.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Step 4. Select the hyperlink that appears once publishing is complete. You will be directed to the Power BI service environment where the dataset has been published. You may be prompted to log-in to Microsoft at this point, in which case, follow all prompts to login then navigate to the Power BI workspace.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/gotit.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Step 5. Click on “My Workspace” to open the workspace in Power BI Service. You will now be able to view the Power BI report and dataset that you just published.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/service.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="refresh" class="level2">
+<h2 class="anchored" data-anchor-id="refresh">Refresh</h2>
+<p>As of the writing of this guide, Microsoft does not support auto-refreshes of the Python script data source. The work around for updating this data source is to manually run a refresh in Power BI desktop then republish the dataset.</p>
+<p>Step 1. Open the Power BI report with the Hosted Feature Layer you need to update.</p>
+<p>Step 2. Click on the “Refresh” button in the Queries toolbar of the Home ribbon. <img src="./images/Refresh_Icon.png" class="img-fluid"> The Refresh window will appear and then close once the refresh is successful.</p>
+<p>Step 3. Save your Power BI report.</p>
+<p>Step 4. Click “Publish” and select the desired workspace under Select a destination and click “Select”. <img src="./images/Publish_Icon.png" class="img-fluid"></p>
+<p>Step 5. You will receive a warning about replacing the existing dataset, choose to replace by selecting “Replace” in the Replace this dataset window.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/replace.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Step 6. Close the Publishing to Power BI window once the dataset has successfully finished.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/gotit2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="all-done" class="level2">
+<h2 class="anchored" data-anchor-id="all-done">All Done</h2>
+<p>That’s it! If you’ve it made it to this point in the post, that means you’ve successfully loaded the Hosted Feature Layer as a data source in yout Power BI report and published the data to your Power BI workspace. At this point, you’re ready to begin slicing and dicing the data to your heart’s content.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

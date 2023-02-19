@@ -1,0 +1,135 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Content",
+    "section": "",
+    "text": "ArcGIS API for Python\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nFeb 13, 2023\n\n\nAmy Larson\n\n\n\n\n\n\n  \n\n\n\n\nWelcome\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nFeb 10, 2023\n\n\nAmy Larson\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Amy Larson is a geospatial science and data professional with over eight years of industry specific experience, whose work is focused on digital product design and delivery; data analysis, collection, and management; and process automation.\nWhen not on the clock, you will find her tinkering with some low-code/no-code tech to automate mundane tasks and routines like family calendars, secret Santa name generators, and the like. Or, roaming the river valleys of SE MN with her family and two cattle dogs."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Welcome to my site, thanks for visiting. If you’re here, it’s likely becuase you’re interested in learning a little more about my professional background and experience, beyond the usual LinkedIn posts and likes.\nMy name is Amy Larson and I’m currently a GIS Developer with Dewberry. I’ve had the priveldge of working in the Geospatial industry for the last eight years and have spent most of that time meadnering through the various speciaties that make up this exciting and board industry–from GIS Analyst, to Remote Sensing Analyst, to Solution Engineer, and now Developer. And despite the many changes throughout my career, one thing has remained constant, and that’s the importance of networking with others in the field to share work, insights, and relevant ideas about how the Geospatial industry continues to morph and blend with other disciplines.\nI’ve spent the last several years of my career working my way into analytics and automation, and decided to create this site as a way to share some of the work that I’ve found most interesting and relevant. For now, this site will be a place for me to share some of my work, experience, and interests in the form of helpful tutorials and user guides, but who knows where this project may lead–so stay tuned!"
+  },
+  {
+    "objectID": "posts/arcgis-api-for-python/index.html",
+    "href": "posts/arcgis-api-for-python/index.html",
+    "title": "ArcGIS API for Python",
+    "section": "",
+    "text": "If you’re like me and frequently use Python to automate GIS and data analysis workflows, then you are likely aware of Esri’s newest development API–ArcGIS API for Python. The API is a Pythonic based library that allows users the ability to map, manage, analyze, and visualize their geospatial data directly from their AGOL or Enterprise environments. What makes this API so exciting and powerful is that it can be easily integrated with third party applications, such as Power BI, to extend web-based geospatial analysis and content into data analysis and business analysis workflows outside of the Esri platform.\nLike Esri’s other Pythonic based library, Arcpy, ArcGIS API for Python is easy to use and is packaged with each ArcGIS Pro istallation–which makes it an accessible option for integration into your existing data anlysis pipelines and tools."
+  },
+  {
+    "objectID": "posts/arcgis-api-for-python/index.html#whats-the-fuss",
+    "href": "posts/arcgis-api-for-python/index.html#whats-the-fuss",
+    "title": "ArcGIS Api for Python",
+    "section": "What’s the fuss?",
+    "text": "What’s the fuss?\nLike many Pythonic libraries, ArcGIS API for Python is easy to use and works across on-prem and cloud environments."
+  },
+  {
+    "objectID": "posts/arcgis-api-for-python/index.html#use-case",
+    "href": "posts/arcgis-api-for-python/index.html#use-case",
+    "title": "ArcGIS API for Python",
+    "section": "Use Case",
+    "text": "Use Case\nThis tutorial will walk you through implementation of ArcGIS API for Python within the Power BI environment to consume ArcGIS Hosted Feature Layers as Python data sources, that then can be used in Power BI reports and dashboards. All you will need for this workflow is to be signed-in to your ArcGIS account in ArcGIS Pro and have access to a Power BI Pro license or greater."
+  },
+  {
+    "objectID": "posts/arcgis-api-for-python/index.html#getting-started",
+    "href": "posts/arcgis-api-for-python/index.html#getting-started",
+    "title": "ArcGIS API for Python",
+    "section": "Getting Started",
+    "text": "Getting Started\nThe first step in this implementation is to set the Python environment in Power BI to the arcgispro-py3 package available within your ArcGIS Pro installation. Please note, this workflow will only work within environments where ArcGIS Pro and Power BI Desktop are available on the same machine, and you must be signed-in to an active AGOL or Portal in ArcGIS Pro before proceeding with the following steps.\nStep 1. Open Power BI desktop and navigate to File>Options and settings>Options>Python scripting. The options window will appear, you will then select “Browse” under “Python scripting options.\nStep 2: Select “Browse” and navigate to the location of the acrgispro-py3 package. For most users, this will be located in C:>Program Files>ArcGIS>Pro>bin>Python>envs. Select the folder named “arcgispro-py3” and click “OK”. Leave all other settings the same and click “OK” to accept these changes."
+  },
+  {
+    "objectID": "posts/arcgis-api-for-python/index.html#get-data",
+    "href": "posts/arcgis-api-for-python/index.html#get-data",
+    "title": "ArcGIS API for Python",
+    "section": "Get Data",
+    "text": "Get Data\nThe following steps will show you how to call the arcgis module within the arcgispro-py3 package installed with ArcGIS Pro. This module will allow you to query available services from your AGOL or Enterprise accounts, that you can then analyze and visualize in Power BI desktop.\nStep 1. Click on “Get data”  in the Data toolbar on the Home ribbon in Power BI desktop, and select “More” in the options drop down. The Get Data window will appear with All sources as the default option. Here you can either scroll to find “Python script” or click “Other”.\n\n\n\n\n\nStep 2. Select “Python script” as your data source. The Python script window will appear and this is where you will add your Python code. The installation settings at the bottom of the window should list “arcgispro-py3” as the active python environment. If this is not the case, complete the steps laid out under “Getting Started”.\n\n\n\n\n\nStep3. Enter the following code into the code block under “Script” and click “OK”. The Navigator window will appear and the Hosted Feature Layer will appear as a new table named “sdf”.\nNote: The string of characters in the .get() function is the Item ID of the Hosted Feature Layer you will use for this exercise. Optionally, you can use the Item ID of content from your own organization if you would like. If you would like to learn more about Item IDs and where to find this information in AGOL or Portal, you can read about it here.\n```{python}\n\nfrom arcgis.gis import GIS\ngis = GIS(\"pro\")\nservice = gis.content.get(\"85d0ca4ea1ca4b9abf0c51b9bd34de2e\")\nfs = service.layers[0]\nsdf = fs.query().sdf\n\n```\nStep 4. Select the checkbox next to “sdf” in the Navigator window to view the underlying data in the preview pane. Here you can either load the data as is into the visualization canvas in Power BI desktop, or you can transform the data using Power Query. For this exercise, you simply need to load the data into the visualization canvas. Click “Load”."
+  },
+  {
+    "objectID": "posts/arcgis-api-for-python/index.html#publish",
+    "href": "posts/arcgis-api-for-python/index.html#publish",
+    "title": "ArcGIS API for Python",
+    "section": "Publish",
+    "text": "Publish\nFor this exercise you will skip any visualization of the Hosted Feature Layer data you have imported into Power BI desktop. The next step in this implementation will be to publish this report and dataset to your Power BI Service environment.\nStep 1. Save the Power BI report as is.\nStep 2. Click on “Publish” in the Share toolbar of the Home ribbon.  The Publish to Power BI window will appear.\nStep 3. Select “My workspace” under Select a destination and click “Select”. Optionally, you could select any available workspaces you wish to publish to. For this exercise, we will select the default workspace (“My workspace”).\n\n\n\n\n\nStep 4. Select the hyperlink that appears once publishing is complete. You will be directed to the Power BI service environment where the dataset has been published. You may be prompted to log-in to Microsoft at this point, in which case, follow all prompts to login then navigate to the Power BI workspace.\n\n\n\n\n\nStep 5. Click on “My Workspace” to open the workspace in Power BI Service. You will now be able to view the Power BI report and dataset that you just published."
+  },
+  {
+    "objectID": "posts/arcgis-api-for-python/index.html#refresh",
+    "href": "posts/arcgis-api-for-python/index.html#refresh",
+    "title": "ArcGIS API for Python",
+    "section": "Refresh",
+    "text": "Refresh\nAs of the writing of this guide, Microsoft does not support auto-refreshes of the Python script data source. The work around for updating this data source is to manually run a refresh in Power BI desktop then republish the dataset.\nStep 1. Open the Power BI report with the Hosted Feature Layer you need to update.\nStep 2. Click on the “Refresh” button in the Queries toolbar of the Home ribbon.  The Refresh window will appear and then close once the refresh is successful.\nStep 3. Save your Power BI report.\nStep 4. Click “Publish” and select the desired workspace under Select a destination and click “Select”. \nStep 5. You will receive a warning about replacing the existing dataset, choose to replace by selecting “Replace” in the Replace this dataset window.\n\n\n\n\n\nStep 6. Close the Publishing to Power BI window once the dataset has successfully finished."
+  },
+  {
+    "objectID": "posts/arcgis-api-for-python/index.html#all-done",
+    "href": "posts/arcgis-api-for-python/index.html#all-done",
+    "title": "ArcGIS API for Python",
+    "section": "All Done",
+    "text": "All Done\nThat’s it! If you’ve it made it to this point in the post, that means you’ve successfully loaded the Hosted Feature Layer as a data source in yout Power BI report and published the data to your Power BI workspace. At this point, you’re ready to begin slicing and dicing the data to your heart’s content."
+  },
+  {
+    "objectID": "posts/arcgis-api-for-python/arcgis-api-python.html",
+    "href": "posts/arcgis-api-for-python/arcgis-api-python.html",
+    "title": "ArcGIS API for Python",
+    "section": "",
+    "text": "If you’re like me and frequently use Python to automate GIS and data analysis workflows, then you are likely aware of Esri’s newest development API–ArcGIS API for Python. The API is a Pythonic based library that allows users the ability to map, manage, analyze, and visualize their geospatial data directly from their AGOL or Enterprise environments. What makes this API so exciting and powerful is that it can be easily integrated with third party applications, such as Power BI, to extend web-based geospatial analysis and content into data analysis and business analysis workflows outside of the Esri platform.\nLike Esri’s other Pythonic based library, Arcpy, ArcGIS API for Python is easy to use and is packaged with each ArcGIS Pro istallation–which makes it an accessible option for integration into your existing data anlysis pipelines and tools."
+  },
+  {
+    "objectID": "posts/arcgis-api-for-python/arcgis-api-python.html#getting-started",
+    "href": "posts/arcgis-api-for-python/arcgis-api-python.html#getting-started",
+    "title": "ArcGIS API for Python",
+    "section": "Getting Started",
+    "text": "Getting Started\nThe first step in this implementation is to set the Python environment in Power BI to the arcgispro-py3 package available within your ArcGIS Pro installation. Please note, this workflow will only work within environments where ArcGIS Pro and Power BI Desktop are available on the same machine, and you must be signed-in to an active AGOL or Portal in ArcGIS Pro before proceeding with the following steps.\nStep 1. Open Power BI desktop and navigate to File>Options and settings>Options>Python scripting. The options window will appear, you will then select “Browse” under “Python scripting options.\nStep 2: Select “Browse” and navigate to the location of the acrgispro-py3 package. For most users, this will be located in C:>Program Files>ArcGIS>Pro>bin>Python>envs. Select the folder named “arcgispro-py3” and click “OK”. Leave all other settings the same and click “OK” to accept these changes."
+  },
+  {
+    "objectID": "posts/arcgis-api-for-python/arcgis-api-python.html#get-data",
+    "href": "posts/arcgis-api-for-python/arcgis-api-python.html#get-data",
+    "title": "ArcGIS API for Python",
+    "section": "Get Data",
+    "text": "Get Data\nThe following steps will show you how to call the arcgis module within the arcgispro-py3 package installed with ArcGIS Pro. This module will allow you to query available services from your AGOL or Enterprise accounts, that you can then analyze and visualize in Power BI desktop.\nStep 1. Click on “Get data”  in the Data toolbar on the Home ribbon in Power BI desktop, and select “More” in the options drop down. The Get Data window will appear with All sources as the default option. Here you can either scroll to find “Python script” or click “Other”.\n\n\n\n\n\nStep 2. Select “Python script” as your data source. The Python script window will appear and this is where you will add your Python code. The installation settings at the bottom of the window should list “arcgispro-py3” as the active python environment. If this is not the case, complete the steps laid out under “Getting Started”.\n\n\n\n\n\nStep3. Enter the following code into the code block under “Script” and click “OK”. The Navigator window will appear and the Hosted Feature Layer will appear as a new table named “sdf”.\nNote: The string of characters in the .get() function is the Item ID of the Hosted Feature Layer you will use for this exercise. Optionally, you can use the Item ID of content from your own organization if you would like. If you would like to learn more about Item IDs and where to find this information in AGOL or Portal, you can read about it here.\n```{python}\n\nfrom arcgis.gis import GIS\ngis = GIS(\"pro\")\nservice = gis.content.get(\"85d0ca4ea1ca4b9abf0c51b9bd34de2e\")\nfs = service.layers[0]\nsdf = fs.query().sdf\n\n```\nStep 4. Select the checkbox next to “sdf” in the Navigator window to view the underlying data in the preview pane. Here you can either load the data as is into the visualization canvas in Power BI desktop, or you can transform the data using Power Query. For this exercise, you simply need to load the data into the visualization canvas. Click “Load”."
+  },
+  {
+    "objectID": "posts/arcgis-api-for-python/arcgis-api-python.html#publish",
+    "href": "posts/arcgis-api-for-python/arcgis-api-python.html#publish",
+    "title": "ArcGIS API for Python",
+    "section": "Publish",
+    "text": "Publish\nFor this exercise you will skip any visualization of the Hosted Feature Layer data you have imported into Power BI desktop. The next step in this implementation will be to publish this report and dataset to your Power BI Service environment.\nStep 1. Save the Power BI report as is.\nStep 2. Click on “Publish” in the Share toolbar of the Home ribbon.  The Publish to Power BI window will appear.\nStep 3. Select “My workspace” under Select a destination and click “Select”. Optionally, you could select any available workspaces you wish to publish to. For this exercise, we will select the default workspace (“My workspace”).\n\n\n\n\n\nStep 4. Select the hyperlink that appears once publishing is complete. You will be directed to the Power BI service environment where the dataset has been published. You may be prompted to log-in to Microsoft at this point, in which case, follow all prompts to login then navigate to the Power BI workspace.\n\n\n\n\n\nStep 5. Click on “My Workspace” to open the workspace in Power BI Service. You will now be able to view the Power BI report and dataset that you just published."
+  },
+  {
+    "objectID": "posts/arcgis-api-for-python/arcgis-api-python.html#refresh",
+    "href": "posts/arcgis-api-for-python/arcgis-api-python.html#refresh",
+    "title": "ArcGIS API for Python",
+    "section": "Refresh",
+    "text": "Refresh\nAs of the writing of this guide, Microsoft does not support auto-refreshes of the Python script data source. The work around for updating this data source is to manually run a refresh in Power BI desktop then republish the dataset.\nStep 1. Open the Power BI report with the Hosted Feature Layer you need to update.\nStep 2. Click on the “Refresh” button in the Queries toolbar of the Home ribbon.  The Refresh window will appear and then close once the refresh is successful.\nStep 3. Save your Power BI report.\nStep 4. Click “Publish” and select the desired workspace under Select a destination and click “Select”. \nStep 5. You will receive a warning about replacing the existing dataset, choose to replace by selecting “Replace” in the Replace this dataset window.\n\n\n\n\n\nStep 6. Close the Publishing to Power BI window once the dataset has successfully finished."
+  },
+  {
+    "objectID": "posts/arcgis-api-for-python/arcgis-api-python.html#all-done",
+    "href": "posts/arcgis-api-for-python/arcgis-api-python.html#all-done",
+    "title": "ArcGIS API for Python",
+    "section": "All Done",
+    "text": "All Done\nThat’s it! If you’ve it made it to this point in the post, that means you’ve successfully loaded the Hosted Feature Layer as a data source in yout Power BI report and published the data to your Power BI workspace. At this point, you’re ready to begin slicing and dicing the data to your heart’s content."
+  },
+  {
+    "objectID": "posts/welcome/welcome.html",
+    "href": "posts/welcome/welcome.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Welcome to my site, thanks for visiting. If you’re here, it’s likely becuase you’re interested in learning a little more about my professional background and experience, beyond the usual LinkedIn posts and likes.\nMy name is Amy Larson and I’m currently a GIS Developer with Dewberry. I’ve had the priveldge of working in the Geospatial industry for the last eight years and have spent most of that time meadnering through the various speciaties that make up this exciting and board industry–from GIS Analyst, to Remote Sensing Analyst, to Solution Engineer, and now Developer. And despite the many changes throughout my career, one thing has remained constant, and that’s the importance of networking with others in the field to share work, insights, and relevant ideas about how the Geospatial industry continues to morph and blend with other disciplines.\nI’ve spent the last several years of my career working my way into analytics and automation, and decided to create this site as a way to share some of the work that I’ve found most interesting and relevant. For now, this site will be a place for me to share some of my work, experience, and interests in the form of helpful tutorials and user guides, but who knows where this project may lead–so stay tuned!"
+  }
+]
