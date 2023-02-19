@@ -1,0 +1,13 @@
+---
+title: "Welcome"
+author: "Amy Larson"
+date: "2023-02-10"
+categories: [news]
+image: liftoff.jpg
+---
+
+Welcome to my site, thanks for visiting. If you're here, it's likely becuase you're interested in learning a little more about my professional background and experience, beyond the usual LinkedIn posts and likes.
+
+My name is Amy Larson and I'm currently a GIS Developer with Dewberry. I've had the priveldge of working in the Geospatial industry for the last eight years and have spent most of that time meadnering through the various speciaties that make up this exciting and board industry--from GIS Analyst, to Remote Sensing Analyst, to Solution Engineer, and now Developer. And despite the many changes throughout my career, one thing has remained constant, and that's the importance of networking with others in the field to share work, insights, and relevant ideas about how the Geospatial industry continues to morph and blend with other disciplines. 
+
+I've spent the last several years of my career working my way into analytics and automation, and decided to create this site as a way to share some of the work that I've found most interesting and relevant. For now, this site will be a place for me to share some of my work, experience, and interests in the form of helpful tutorials and user guides, but who knows where this project may lead--so stay tuned!
